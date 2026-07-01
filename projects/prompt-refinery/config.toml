@@ -1,0 +1,30 @@
+[agent]
+model = "codex-mini-latest"
+approval_policy = "on-failure"
+disable_response_storage = false
+
+[context]
+max_context_files = 5
+exclude_patterns = [
+  "**/*.md",
+  "**/tests/**",
+  "**/logs/**",
+  "**/node_modules/**",
+  "**/__pycache__/**",
+  "**/.venv/**",
+  "**/assets/audio/**",
+  "**/*.mp3",
+  "**/*.wav",
+  "**/dist/**",
+  "**/build/**"
+]
+
+[behavior]
+no_comments = true
+no_docstrings = true
+no_styling = true
+no_tests = true
+no_explanation = true
+caveman_mode = true
+suggest_next_prompt = false
+prompt_refinery_integration = false

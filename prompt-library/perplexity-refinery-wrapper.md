@@ -1,7 +1,7 @@
 # Perplexity Pro Prompt Refinery Wrapper
-## Verbose, explained, educational prompt for external refinement
+## Verbose, explained, educational — use in Perplexity Pro chat only, never in API
 
-Paste this into a **new Perplexity Pro chat** (any model). Designed to be maximally verbose and explanatory so you can think through architecture in Perplexity without spending Codex tokens.
+Paste this into a new Perplexity Pro chat. Replace `{paste your idea here}` at the bottom.
 
 ---
 
@@ -13,39 +13,33 @@ TASK: Take my messy, half-formed feature request and produce a comprehensive, ve
 OUTPUT FORMAT (be maximally verbose in sections 1-3, maximally terse in section 4):
 
 1. PROJECT BRIEF (2-4 paragraphs)
-   Explain the architecture, data flow, likely edge cases, and dependencies. Use analogies. Be educational. I want to understand *why* this approach is best before I burn tokens on it.
+   Explain the architecture, data flow, likely edge cases, and dependencies. Use analogies. Be educational.
 
 2. ATOMIC TASK BREAKDOWN (numbered list)
-   Split the work into the smallest possible Codex sessions. Each task must be:
-   - Single-file or single-function focus
-   - No dependencies on future sessions
-   - Caveman-speak ready
-   Explain the rationale for the split order.
+   Split into smallest possible Codex sessions. Each task: single-file focus, no future dependencies, caveman-speak ready.
 
 3. TOKEN EFFICIENCY ANALYSIS (bullet list)
    - Why this structure reduces cached input tokens
    - Why separating planning from execution saves agent loops
-   - Which parts are safe to skip (styling, tests, docs)
+   - Which parts are safe to skip
    - Estimated token savings vs. doing this inside Codex
 
-4. CODEX-READY PROMPT: TASK 1 ONLY (strict format)
-   - Use caveman-speak. No filler words.
-   - Specify exact file names (no extensions).
-   - State inputs, outputs, and what NOT to do.
-   - Include ONLY functionality. Zero styling. Zero comments.
-   - Under 200 tokens if possible.
+4. CODEX-READY PROMPT: TASK 1 ONLY
+   - Caveman-speak. No filler.
+   - Exact file names (no extensions).
+   - Inputs, outputs, what NOT to do.
+   - Zero styling. Zero comments. Under 200 tokens.
 
 5. NEXT PROMPT PREVIEW (1-2 lines)
-   The logical follow-up prompt for the next session, so I can plan ahead.
+   Logical follow-up for the next session.
 
 6. CONTEXT FOR NEXT STEP (1 paragraph)
-   A summary of decisions made to paste into the next Perplexity session for continuity.
+   Summary of decisions to paste into next Perplexity session.
 
-RULES FOR YOUR RESPONSE:
-- Do NOT give me the final code. I have Codex for that.
-- Do NOT be terse in the explanatory sections. I am paying for verbosity HERE, not in the API.
-- Use markdown headers exactly as listed above.
-- If my idea is vague, make reasonable assumptions and state them clearly.
+RULES:
+- Do NOT give me final code.
+- Do NOT be terse in sections 1-3. Verbosity is free here.
+- If my idea is vague, make assumptions and state them clearly.
 
 MY REQUEST: {paste your idea here}
 ```
